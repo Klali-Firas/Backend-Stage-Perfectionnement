@@ -24,7 +24,7 @@ public class Demande {
     @Column(name = "num_demande")
     private int num_demande;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_agent", referencedColumnName = "id_utilisateur")
     private Utilisateur id_agent;
 

@@ -25,7 +25,7 @@ class Trace_DemandeId implements Serializable {
 
 public class Trace_Demande implements Serializable {
     @Id
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "demande")
     private Demande demande;
 
@@ -33,11 +33,11 @@ public class Trace_Demande implements Serializable {
     @Column(name = "date_mise_a_jour")
     private Date date_mise_a_jour;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "validateur", referencedColumnName = "id_utilisateur")
     private Utilisateur validateur;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
     @JoinColumn(name = "statut", referencedColumnName = "id_statut")
     @JsonIgnoreProperties({ "hibernateLazyInitializer" })
     private Statut statut;

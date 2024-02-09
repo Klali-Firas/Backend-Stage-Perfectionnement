@@ -22,7 +22,7 @@ public class Utilisateur {
     @Column(name = "prenom")
     private String prenom;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "commune", referencedColumnName = "num")
     @JsonIgnoreProperties({ "hibernateLazyInitializer" })
     private Commune commune;
