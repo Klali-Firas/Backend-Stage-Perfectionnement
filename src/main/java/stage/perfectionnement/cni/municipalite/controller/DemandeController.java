@@ -71,7 +71,7 @@ public class DemandeController {
             Date date = dateFormat.parse(demande.get("date_demande"));
             Date datedDeliberation = dateFormat.parse(demande.get("date_deliberation"));
             Date dateSignature = dateFormat.parse(demande.get("date_signature"));
-            System.out.printf("here");
+
 
             // Save the demande
             Demande createdDemande = new Demande(demande.get("type_demande"),
